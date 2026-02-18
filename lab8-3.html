@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks Calculator</title>
+</head>
+<body>
+
+    <h3>Enter Marks for 5 Subjects</h3>
+
+    Subject 1: <input type="number" id="m1"><br><br>
+    Subject 2: <input type="number" id="m2"><br><br>
+    Subject 3: <input type="number" id="m3"><br><br>
+    Subject 4: <input type="number" id="m4"><br><br>
+    Subject 5: <input type="number" id="m5"><br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+
+            var m1 = parseFloat(document.getElementById("m1").value);
+            var m2 = parseFloat(document.getElementById("m2").value); 
+            var m3 = parseFloat(document.getElementById("m3").value);
+            var m4 = parseFloat(document.getElementById("m4").value);
+            var m5 = parseFloat(document.getElementById("m5").value);
+
+            var total = m1 + m2 + m3 + m4 + m5;
+            var average = total / 5;
+            var grade = "";
+
+            if (average >= 90)
+                grade = "A+";
+            else if (average >= 80)
+                grade = "A";
+            else if (average >= 70)
+                grade = "B";
+            else if (average >= 60)
+                grade = "C";
+            else if (average >= 50)
+                grade = "D";
+            else
+                grade = "Fail";
+
+            document.getElementById("result").innerHTML =
+                "Total Marks: " + total + "<br>" +
+                "Average Marks: " + average + "<br>" +
+                "Grade: " + grade;
+        }
+    </script>
+
+</body>
+</html>
